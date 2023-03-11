@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Center the content in the body */
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+/* Style the heading */
+h1 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+/* Style the input and button */
+input[type="text"], button {
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  border: none;
+  border-color: red;
+  border-radius: 0.25rem;
+  margin: 0.5rem;
+}
+
+button {
+  background-color: blue;
+  color: white;
+  cursor: pointer;
+}
+
+/* Style the paragraph */
+p {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: 2rem;
+  text-align: center;
+}
+.red{color:red;}
+.green{color:green}
+.blue{color:blueviolet;}
+
+/* table*/
+
+.my-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.my-table th, .my-table td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.my-table th {
+  background-color: #4CAF50;
+  color: white;
+}
+    </style>
+    <title>javascript test</title>
+</head>
+<body>
+    <h1>this is a javascript test</h1>
+    
+        <input id="user_name" type="text">
+        <button id="button">submit</button>
+    
+    <p id="test_java"></p>
+    <table class="my-table">
+      <tr>
+        <th>name</th>
+        <th>Author</th>
+        <th>Year</th>
+      </tr>
+    </table>
+    <script src="java.js"></script>
+    <script>
+        const btn = document.getElementById('button');
+        btn.addEventListener('click', function checking(){
+            
+            const uName = document.getElementById('user_name').value;
+            const x = Math.floor((Math.random()*100)+1);
+            
+            if(uName == ''){
+                document.getElementById('test_java').innerHTML =
+                 '<span class="blue">Please input a number</SPAN>';
+                  return;
+            }
+            else if(isNaN(uName)){
+                document.getElementById('test_java').innerHTML =
+                 '<span class="blue">Please input a valid number</span> ';
+                  return;
+            }
+            else if(Number(uName) === x){
+               document.getElementById('test_java').innerHTML =
+                 `<span class="green" Congrachulation!! the number is ${x}. </span>`;
+            }
+            
+            else{
+                document.getElementById('test_java').innerHTML = 
+                `<span class="red"> Opps!!! the number is ${x}</span>`;
+            }
+        });
+    </script>
+</body>
+</html>
